@@ -346,7 +346,7 @@ module.exports.processAndInsert = async (index, rows) => {
         comment: !!comment ? comment : "",
       };
 
-      console.log(data);
+      // console.log(data);
       return data;
     }
   );
