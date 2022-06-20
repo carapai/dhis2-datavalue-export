@@ -331,6 +331,7 @@ module.exports.processAndInsert = async (index, rows) => {
       levels,
       coc_categories,
       aoc_categories,
+      comment,
       ...others
     }) => {
       const id = `${others.dx}${others.co}${others.ao}${others.ou}${others.periodid}`;
@@ -342,9 +343,10 @@ module.exports.processAndInsert = async (index, rows) => {
         ...levels,
         ...coc_categories,
         ...aoc_categories,
+        comment: !!comment ? comment : "",
       };
 
-      console.log(data)
+      console.log(data);
       return data;
     }
   );
