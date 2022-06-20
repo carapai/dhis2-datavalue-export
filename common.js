@@ -319,7 +319,7 @@ from datavalue dv
     acoc.categoryoptioncomboid = dv.attributeoptioncomboid
   )
   inner join organisationunit ou on(ou.organisationunitid = dv.sourceid)
-where dv.value ~ '^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$';`;
+where de.uid not in ('JdowwyHSMHl','Q0uAeOuEzlz','nRCsegBzni9','zrL0OqBkKXe','D7qhmELZzJJ','WMN7dFv3JKa','UVUitjdSNJN','thcjJJ8TvBT','skKVxc4Ua0N','MZleqGYROgE','kLr2nSAWSof','QbICJCJP6I3','kT83oQMyD2y','eeqnLLL8OIH','ddfTD8820j7','eqWQ7nVhNqF','zx970xxRI0W','FHakM0UH3RF','CcCeeLAAITz','koACTA5Hhm5','ERqNKL8zyjQ','GIEjVKNT68L','okHaHXA8o7u','RONXsIoMMkT','uA7vdZdrE6m','u08aKnXXO6F','EKir7cftV4C','eP7OC0bJeRS','mmsR04zD4B4','cxyZTqa5Gkd') and dv.value ~ '^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$';`;
 
 module.exports.intervalQuery = ``;
 
