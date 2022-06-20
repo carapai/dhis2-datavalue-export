@@ -273,6 +273,7 @@ module.exports.backlogQuery = `select CASE
   coc.uid co,
   de.uid dx,
   p.startdate,
+  p.id,
   p.enddate,
   pt.name,
   dv.storedby,
@@ -332,7 +333,9 @@ module.exports.processAndInsert = async (index, rows) => {
       aoc_categories,
       ...others
     }) => {
+      const id = `${dx}${co}${ao}${ou}${periodid}`;
       return {
+        id,
         ...others,
         ...groups,
         ...groupset,
