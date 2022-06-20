@@ -334,7 +334,7 @@ module.exports.processAndInsert = async (index, rows) => {
       ...others
     }) => {
       const id = `${others.dx}${others.co}${others.ao}${others.ou}${others.periodid}`;
-      return {
+      const data = {
         id,
         ...others,
         ...groups,
@@ -343,6 +343,9 @@ module.exports.processAndInsert = async (index, rows) => {
         ...coc_categories,
         ...aoc_categories,
       };
+
+      console.log(data)
+      return data;
     }
   );
   try {
