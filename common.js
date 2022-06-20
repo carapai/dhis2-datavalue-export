@@ -333,7 +333,7 @@ module.exports.processAndInsert = async (index, rows) => {
       aoc_categories,
       ...others
     }) => {
-      const id = `${dx}${co}${ao}${ou}${periodid}`;
+      const id = `${others.dx}${others.co}${others.ao}${others.ou}${others.periodid}`;
       return {
         id,
         ...others,
