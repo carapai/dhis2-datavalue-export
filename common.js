@@ -355,9 +355,9 @@ module.exports.processAndInsert = async (index, rows) => {
     data: all,
   });
   console.log(data);
-  data.errorDocuments.forEach(({ error, document }) =>
-    console.error(error, document)
-  );
+  // data.errorDocuments.forEach(({ error, document }) =>
+  //   console.error(error, document)
+  // );
   // } catch (error) {
   //   console.log(error.message);
   // }
