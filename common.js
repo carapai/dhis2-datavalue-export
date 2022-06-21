@@ -323,7 +323,7 @@ where de.valuetype in(
     'INTEGER_POSITIVE',
     'INTEGER_ZERO_OR_POSITIVE',
     'NUMBER'
-  ) limit 10`;
+  );`;
 
 module.exports.intervalQuery = ``;
 
@@ -353,15 +353,16 @@ module.exports.processAndInsert = async (index, rows) => {
       return data;
     }
   );
-  // try {
-  //   const { data } = await this.api.post(`wal/index?index=${index}`, {
-  //     data: all,
-  //   });
-  //   data.errorDocuments.forEach(({ error, document }) =>
-  //     console.error(error, document)
-  //   );
-  // } catch (error) {
-  //   console.log(error.message);
-  // }
+  try {
+    const { data } = await this.api.post(`wal/index?index=${index}`, {
+      data: all,
+    });
+    console.log(data.inserted);
+    data.errorDocuments.forEach(({ error, document }) =>
+      console.error(error, document)
+    );
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 module.exports.batchSize = 10000;
