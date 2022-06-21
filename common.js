@@ -322,7 +322,7 @@ where de.valuetype in(
     'INTEGER_POSITIVE',
     'INTEGER_ZERO_OR_POSITIVE',
     'NUMBER'
-  ) limit 1000`;
+  ) limit 10`;
 
 module.exports.intervalQuery = ``;
 
@@ -337,6 +337,7 @@ module.exports.processAndInsert = async (index, rows) => {
       comment,
       ...others
     }) => {
+      console.log(others);
       const id = `${others.dx}${others.co}${others.ao}${others.ou}${others.periodid}`;
       const data = {
         id,
@@ -351,16 +352,15 @@ module.exports.processAndInsert = async (index, rows) => {
       return data;
     }
   );
-  // try {
-  const data = await this.api.post(`wal/index?index=${index}`, {
-    data: all,
-  });
-  console.log(data);
-  // data.errorDocuments.forEach(({ error, document }) =>
-  //   console.error(error, document)
-  // );
-  // } catch (error) {
-  //   console.log(error.message);
-  // }
+  try {
+    const { data } = await this.api.post(`wal/index?index=${index}`, {
+      data: all,
+    });
+    data.errorDocuments.forEach(({ error, document }) =>
+      console.error(error, document)
+    );
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 module.exports.batchSize = 10000;
