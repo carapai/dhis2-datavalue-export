@@ -274,6 +274,7 @@ module.exports.backlogQuery = `select CASE
   de.uid dx,
   p.startdate,
   p.enddate,
+  p.periodid
   pt.name,
   dv.storedby,
   dv.created,
