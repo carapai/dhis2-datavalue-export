@@ -338,7 +338,6 @@ module.exports.processAndInsert = async (index, rows) => {
       comment,
       ...others
     }) => {
-      console.log(others);
       const id = `${others.dx}${others.co}${others.ao}${others.ou}${others.periodid}`;
       const data = {
         id,
