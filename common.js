@@ -342,6 +342,7 @@ module.exports.processAndInsert = async (index, rows) => {
       const data = {
         id,
         ...others,
+        value: Number(others.value),
         ...groups,
         ...groupset,
         ...levels,
